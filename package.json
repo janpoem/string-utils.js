@@ -1,0 +1,15 @@
+{
+  "name": "php-trim-plus",
+  "version": "0.0.1",
+  "description": "string trim",
+  "repository": "https://gitee.com/janpoem/php-trim-plus.git",
+  "author": "Jan <janpoem@163.com>",
+  "license": "MIT",
+  "main": "trim.js",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
