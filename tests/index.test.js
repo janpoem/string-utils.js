@@ -1,4 +1,4 @@
-const {trim, ltrim, rtrim, toSafeString, isString, isEmptyString, isEmptyStringOrWhitespace} = require('../trim');
+const {trim, ltrim, rtrim, toSafeString, isString, isEmptyString, isEmptyStringOrWhitespace} = require('../index');
 
 describe('trim test', () => {
 
@@ -69,8 +69,8 @@ describe('trim test', () => {
 		expect(isEmptyString(null)).toBe(true);
 		expect(isEmptyString(undefined)).toBe(true);
 		expect(isEmptyString('')).toBe(true);
-		expect(isEmptyString('  ')).toBe(false);
 		expect(isEmptyString('0')).toBe(false);
+		expect(isEmptyString('  ')).toBe(false);
 		expect(isEmptyString([])).toBe(false);
 		expect(isEmptyString({'ok': 'ok'})).toBe(false);
 	});

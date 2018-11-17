@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/janpoem/php-trim-plus/master.svg)](https://travis-ci.org/janpoem/php-trim-plus)
 [![Dependencies Status](https://img.shields.io/david/janpoem/php-trim-plus.svg)](https://david-dm.org/janpoem/php-trim-plus)
 
-PHP的trim比较好用，但默认trim如果指定了charList，则只截取charList中的文本，默认的空格（换行字符等）就不处理了。
+PHP的trim比较好用，但默认trim如果指定了charList，则只截取charList中的文本，默认的空格（换行字符等）就不处理了，修改了次模式，默认为追加模式，即whitespace + charList。
 
 ## 安装说明
 
@@ -16,28 +16,68 @@ yarn add php-trim-plus
 
 ## 使用说明
 
+默认打包的版本（index.js），已经将依赖的 lodash 整合打包。
+
+trim.js 未打包 lodash
+
 ```js
-trim(str, charList, isPlus, mode)
-trim.left(str, charList, isPlus)
-trim.right(str, charList, isPlus)
+const {trim, ltrim, rtrim, toSafeString, isString, isEmptyString, isEmptyStringOrWhitespace} = require('../php-trim-plus');
+// or
+import {trim, ltrim, rtrim, toSafeString, isString, isEmptyString, isEmptyStringOrWhitespace} from 'php-trim-plus';
+```
+
+```js
+trim(str, charList, isPlus)
+ltrim(str, charList, isPlus)
+rtrim(str, charList, isPlus)
+trim(' 开源中国 '); // '开源中国'
+trim(' 红薯-- ', '-'); // '红薯'
 ```
 
 `str: string` 要截取的字符串
 `charList: string` 要额外截取的字符串
 `isPlus: boolean` 对 charList 是在现有空字符的基础上追加 charList，默认为 true，`trim.Replace` or `trim.Plus`
-`mode: number` 匹配的模式，默认模式位两边一起截取，`trim.left`, `trim.right`
+
 
 ```js
-trim(' 开源中国 '); // '开源中国'
-trim(' 红薯-- ', '-'); // '红薯'
+toSafeString(value)
+
+toSafeString(['a', 'b', 'c'], '/'); // 'a/b/c'
 ```
 
-增加了一个方法
+将字符串转为安全字符串。
+
+如果 value 为数组类型，会将数组打扁 [flattenDeep](https://lodash.com/docs/4.17.11#flattenDeep) 后，再join，可以指定第二参数 `spr`
+
+字符串转换，默认增加了 `value.normalize()` 转换 unicode。
 
 ```js
-trim.toString(value)
+isString(value); 
 ```
 
-基于 lodash 的 toString，如果 value 为字符串，则会执行 `value.normalize()` （[参考：阮一峰 - Unicode与JavaScript详解](http://www.ruanyifeng.com/blog/2014/12/unicode.html)）。
+lodash.isString 的引用
 
- 
+```js
+isEmptyString(value);
+
+isEmptyString(null); // true
+isEmptyString(undefined); // true
+isEmptyString(''); // true
+isEmptyString([]); // false
+isEmptyString({}); // false
+```
+
+是否为空白字符串，这里不会对 `value` 进行trim，如果需要检查是否为纯粹的空格，请使用 `isEmptyStringOrWhitespace`。
+
+```js
+isEmptyStringOrWhitespace(value);
+
+isEmptyStringOrWhitespace(null); // true
+isEmptyStringOrWhitespace(undefined); // true
+isEmptyStringOrWhitespace(''); // true
+isEmptyStringOrWhitespace(' '); // true
+isEmptyStringOrWhitespace('\t'); // true
+isEmptyStringOrWhitespace('\n'); // true
+isEmptyStringOrWhitespace([]); // false
+isEmptyStringOrWhitespace({}); // false
+```
