@@ -27,6 +27,11 @@ trim.right(str, charList, isPlus)
 `isPlus: boolean` 对 charList 是在现有空字符的基础上追加 charList，默认为 true，`trim.Replace` or `trim.Plus`
 `mode: number` 匹配的模式，默认模式位两边一起截取，`trim.left`, `trim.right`
 
+```js
+trim(' 开源中国 '); // '开源中国'
+trim(' 红薯-- ', '-'); // '红薯'
+```
+
 增加了一个方法
 
 ```js
