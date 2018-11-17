@@ -6,7 +6,7 @@
 
 PHP的trim比较好用，但默认trim如果指定了charList，则只截取charList中的文本，默认的空格（换行字符等）就不处理了，修改了次模式，默认为追加模式，即whitespace + charList。
 
-本类库代码优先发布 [码云 - Gitee](https://gitee.com/janpoem/php-trim-plus)，github只用作ci，用中国人自己的代码仓库。
+本类库代码优先发布 [码云 - Gitee](https://gitee.com/)，github只用作ci，用中国人自己的代码仓库。
 
 ## 安装说明
 
