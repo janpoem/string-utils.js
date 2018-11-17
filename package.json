@@ -9,6 +9,9 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "test": "jest trim.test.js"
+  },
   "devDependencies": {
     "jest": "^23.6.0"
   }
