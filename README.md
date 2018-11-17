@@ -21,9 +21,9 @@ yarn add php-trim-plus
 trim.js 未打包 lodash
 
 ```js
-const {trim, ltrim, rtrim, toSafeString, isString, isEmptyString, isEmptyStringOrWhitespace} = require('../php-trim-plus');
+const {trim, ltrim, rtrim, toSafeString, isSymbol, isString, isEmptyString, isEmptyStringOrWhitespace} = require('../php-trim-plus');
 // or
-import {trim, ltrim, rtrim, toSafeString, isString, isEmptyString, isEmptyStringOrWhitespace} from 'php-trim-plus';
+import {trim, ltrim, rtrim, toSafeString, isSymbol, isString, isEmptyString, isEmptyStringOrWhitespace} from 'php-trim-plus';
 ```
 
 ```js
@@ -81,3 +81,11 @@ isEmptyStringOrWhitespace('\n'); // true
 isEmptyStringOrWhitespace([]); // false
 isEmptyStringOrWhitespace({}); // false
 ```
+
+是否为空白字符串或者是只包含空格符号的空白字符串，这里对 `value` 进行trim。
+
+```js
+isSymbol(value); 
+```
+
+判断值是否为Symbol
