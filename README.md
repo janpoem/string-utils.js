@@ -1,4 +1,4 @@
-# php-trim-plus PHP风格的trim函数加强版
+# php-trim-plus - PHP风格的trim函数加强版
 
 PHP的trim比较好用，但默认trim如果指定了charList，则只截取charList中的文本，默认的空格（换行字符等）就不处理了。
 
