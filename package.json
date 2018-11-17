@@ -1,8 +1,12 @@
 {
   "name": "php-trim-plus",
   "version": "0.0.1",
-  "description": "string trim",
+  "description": "php string trim function in javascript.",
   "repository": "https://gitee.com/janpoem/php-trim-plus.git",
+  "keywords": [
+    "trim",
+    "string trim"
+  ],
   "author": "Jan <janpoem@163.com>",
   "license": "MIT",
   "main": "trim.js",
