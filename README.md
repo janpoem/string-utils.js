@@ -1,37 +1,34 @@
-# php-trim-plus
+# php-trim-plus PHP风格的trim函数加强版
 
-#### 项目介绍
-将PHP的trim加强并实现在JS（基于locutus 的 php.js）
+PHP的trim比较好用，但默认trim如果指定了charList，则只截取charList中的文本，默认的空格（换行字符等）就不处理了。
 
-#### 软件架构
-软件架构说明
+## 安装说明
 
+```shell
+npm install php-trim-plus --save
+// or
+yarn add php-trim-plus
+```
 
-#### 安装教程
+## 使用说明
 
-1. xxxx
-2. xxxx
-3. xxxx
+```js
+trim(str, charList, isPlus, mode)
+trim.left(str, charList, isPlus)
+trim.right(str, charList, isPlus)
+```
 
-#### 使用说明
+`str: string` 要截取的字符串
+`charList: string` 要额外截取的字符串
+`isPlus: boolean` 对 charList 是在现有空字符的基础上追加 charList，默认为 true，`trim.Replace` or `trim.Plus`
+`mode: number` 匹配的模式，默认模式位两边一起截取，`trim.left`, `trim.right`
 
-1. xxxx
-2. xxxx
-3. xxxx
+增加了一个方法
 
-#### 参与贡献
+```js
+trim.toString(value)
+```
 
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+基于 lodash 的 toString，如果 value 为字符串，则会执行 `value.normalize()` （[参考：阮一峰 - Unicode与JavaScript详解](http://www.ruanyifeng.com/blog/2014/12/unicode.html)）。
 
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+ 
