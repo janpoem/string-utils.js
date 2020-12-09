@@ -58,7 +58,7 @@ isEmptyString(value);
 isEmptyString(null); // true
 isEmptyString(undefined); // true
 isEmptyString(''); // true
-isEmptyString([]); // false
+isEmptyString([]); // true 当前版本修改
 isEmptyString({}); // false
 ```
 
@@ -73,7 +73,7 @@ isEmptyStringOrWhitespace(''); // true
 isEmptyStringOrWhitespace(' '); // true
 isEmptyStringOrWhitespace('\t'); // true
 isEmptyStringOrWhitespace('\n'); // true
-isEmptyStringOrWhitespace([]); // false
+isEmptyStringOrWhitespace([]); // true 当前版本修改
 isEmptyStringOrWhitespace({}); // false
 ```
 
