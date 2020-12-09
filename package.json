@@ -1,6 +1,6 @@
 {
-  "name": "@ke/string-utils",
-  "version": "1.0.0",
+  "name": "@keworks/string-utils",
+  "version": "0.1.0",
   "description": "javascript string utils",
   "repository": "https://gitee.com/janpoem/string-utils.js.git",
   "keywords": [
