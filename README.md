@@ -1,8 +1,7 @@
 # string-utils.js
 
-[![Npm version](https://img.shields.io/npm/v/php-trim-plus.svg)](https://www.npmjs.com/package/php-trim-plus)
-[![Build Status](https://img.shields.io/travis/janpoem/php-trim-plus/master.svg)](https://travis-ci.org/janpoem/php-trim-plus)
-[![Dependencies Status](https://img.shields.io/david/janpoem/php-trim-plus.svg)](https://david-dm.org/janpoem/php-trim-plus)
+[![Npm version](https://img.shields.io/npm/v/@keworks/string-utils.svg)](https://www.npmjs.com/package/@keworks/string-utils)
+[![Dependencies Status](https://img.shields.io/david/@keworks/string-utils.svg)](https://david-dm.org/@keworks/string-utils)
 
 [_原 php-trim-plus_](https://www.npmjs.com/package/php-trim-plus)
 
