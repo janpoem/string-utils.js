@@ -1,10 +1,12 @@
+'use strict';
+
 const bufferExists = typeof Buffer !== 'undefined';
 const arrayBufferExists = typeof ArrayBuffer !== 'undefined';
 const textDecoderExists = typeof TextDecoder === 'undefined';
 
 export const isSupportBuffer = () => bufferExists || arrayBufferExists;
 
-export function isBufferObject(obj: any) {
+export function isBufferObject(obj) {
   if (obj instanceof ArrayBuffer) {
     return true;
   }
@@ -24,7 +26,7 @@ function toHex(n) {
   return n.toString(16);
 }
 
-export function bufferToString(buf: any, encoding: string) {
+export function bufferToString(buf, encoding) {
   if (!isBufferObject(buf)) {
     return '';
   }

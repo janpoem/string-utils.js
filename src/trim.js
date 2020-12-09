@@ -1,5 +1,7 @@
+'use strict';
+
 import isString from 'lodash/isString';
-import { toSafeString } from '../trim';
+import toSafeString from './toSafeString';
 
 const isArray = Array.isArray;
 
@@ -55,7 +57,7 @@ const DefaultWhitespace = [
  * @param {string|string[]} charList
  * @return {string}
  */
-function convertCharList(charList: string | string[]) {
+function convertCharList(charList) {
   if (isArray(charList)) {
     charList = charList.join('');
   }
@@ -79,10 +81,10 @@ function convertCharList(charList: string | string[]) {
  * @returns {string}
  */
 export function trim(
-  str: string,
-  charList: string | string[] = null,
-  isPlus: boolean             = PlusCharList,
-  mode: number                = TrimBoth
+  str,
+  charList = null,
+  isPlus   = PlusCharList,
+  mode     = TrimBoth
 ) {
   var whitespace = DefaultWhitespace;
   var l = 0;
@@ -139,9 +141,9 @@ trim.Plus = PlusCharList;
  * @return {string}
  */
 export function ltrim(
-  str: string,
-  charList: string | string[] = null,
-  isPlus: boolean             = PlusCharList
+  str,
+  charList = null,
+  isPlus   = PlusCharList
 ) {
   return trim(str, charList, isPlus, TrimLeft);
 }
@@ -156,9 +158,9 @@ export function ltrim(
  * @return {string}
  */
 export function rtrim(
-  str: string,
-  charList: string | string[] = null,
-  isPlus: boolean             = PlusCharList
+  str,
+  charList = null,
+  isPlus   = PlusCharList
 ) {
   return trim(str, charList, isPlus, TrimRight);
 }

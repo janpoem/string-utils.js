@@ -48,7 +48,5 @@ describe('toSafeString', () => {
     const obj2 = {a: 'a'};
     expect(toSafeString(obj2)).toBe('[object Object]');
 
-    const func = () => {};
-    console.log(toSafeString(func));
   });
 });

@@ -11,9 +11,9 @@ module.exports = {
   'extends'      : [
     'eslint:recommended',
   ],
-  'plugins'      : [
-    'flowtype'
-  ],
+  // 'plugins'      : [
+  //   'flowtype'
+  // ],
   'settings'     : {},
   'parser'       : 'babel-eslint',
   'parserOptions': {

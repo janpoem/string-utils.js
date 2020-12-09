@@ -3,7 +3,7 @@
 import isString from './isString';
 import isSymbol from './isSymbol';
 import flattenDeep from './flattenDeep';
-import { bufferToString, isBufferObject, isSupportBuffer } from './buffer';
+import { bufferToString, isBufferObject } from './buffer';
 
 const isArray = Array.isArray;
 
@@ -24,7 +24,7 @@ const arrayBufferExists = typeof ArrayBuffer !== 'undefined';
  * @param value
  * @return {string}
  */
-const normalize = (value: string) => {
+const normalize = (value) => {
   if (typeof value.normalize === 'function') {
     return value.normalize();
   }
@@ -37,7 +37,7 @@ const normalize = (value: string) => {
  * @param {string} arg
  * @return {string}
  */
-function toSafeString(value: any, arg: string) {
+function toSafeString(value, arg) {
   if (typeof value === 'undefined' || value === null) {
     return '';
   }
@@ -54,7 +54,7 @@ function toSafeString(value: any, arg: string) {
   if (symbolProto && isSymbol(value)) {
     return symbolToString ? symbolToString.call(value) : '';
   }
-  if (isSupportBuffer() && isBufferObject(value)) {
+  if (isBufferObject(value)) {
     return normalize(bufferToString(value, arg));
   }
   const type = typeof value;

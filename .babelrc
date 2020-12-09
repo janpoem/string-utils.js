@@ -6,6 +6,5 @@
         "useBuiltIns": false
       }
     ]
-  ],
-  "plugins": ["@babel/transform-flow-strip-types"]
+  ]
 }
