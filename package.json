@@ -1,8 +1,8 @@
 {
-  "name": "php-trim-plus",
-  "version": "0.0.2",
-  "description": "php string trim function in javascript.",
-  "repository": "https://gitee.com/janpoem/php-trim-plus.git",
+  "name": "@ke/string-utils",
+  "version": "0.1.0",
+  "description": "javascript string utils",
+  "repository": "https://gitee.com/janpoem/string-utils.js.git",
   "keywords": [
     "trim",
     "ltrim",
@@ -13,7 +13,7 @@
     "isEmptyString",
     "toSafeString"
   ],
-  "author": "Jan <janpoem@163.com>",
+  "author": "Jiankai Zeng <janpoem@163.com>",
   "license": "MIT",
   "main": "index.js",
   "files": [
@@ -31,19 +31,17 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "jest": "^23.6.0",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.4.0"
-  },
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-flow-strip-types": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-flow": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.15.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "jest": "^26.6.3"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.20"
   }
 }

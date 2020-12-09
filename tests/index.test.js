@@ -1,6 +1,12 @@
 const {trim, ltrim, rtrim, toSafeString, isString, isEmptyString, isEmptyStringOrWhitespace} = require('../index');
 
+import testIsString from '../src/isString';
+
 describe('trim test', () => {
+
+	it('test 1', () => {
+		console.log(testIsString);
+	});
 
 	it('trim basic test', () => {
 		expect(trim(' 你好 ')).toBe('你好');
@@ -45,15 +51,7 @@ describe('trim test', () => {
 		expect(rtrim("/a/b/c///\\\\", '/\\')).toBe('/a/b/c');
 	});
 
-	it('toSafeString test', () => {
-		expect(toSafeString('\u004F\u030C\u004F\u030C ab\n\u01D1')).toBe('\u01D1\u01D1 ab\n\u01D1');
-		expect(toSafeString(['a', 'b', 'c', 'd'])).toBe('abcd');
-		expect(toSafeString(['a', 'b', 'c', 'd'], '/')).toBe('a/b/c/d');
-		expect(toSafeString(['a', 'b', ['c1', 'c2'], ['d1', 'd2']], '/')).toBe('a/b/c1/c2/d1/d2');
-		expect(toSafeString(new String('okokok'))).toBe('okokok');
-		expect(toSafeString(Symbol('hello world'))).toBe('Symbol(hello world)');
-		expect(toSafeString({})).toBe('[object Object]');
-	});
+
 
 	it('isString', () => {
 		expect(isString('aa')).toBe(true);

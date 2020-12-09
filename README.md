@@ -1,32 +1,42 @@
-# php-trim-plus - PHP风格的trim函数加强版
+# string-utils.js
 
 [![Npm version](https://img.shields.io/npm/v/php-trim-plus.svg)](https://www.npmjs.com/package/php-trim-plus)
 [![Build Status](https://img.shields.io/travis/janpoem/php-trim-plus/master.svg)](https://travis-ci.org/janpoem/php-trim-plus)
 [![Dependencies Status](https://img.shields.io/david/janpoem/php-trim-plus.svg)](https://david-dm.org/janpoem/php-trim-plus)
 
-PHP的trim比较好用，但默认trim如果指定了charList，则只截取charList中的文本，默认的空格（换行字符等）就不处理了，修改了次模式，默认为追加模式，即whitespace + charList。
+[_原 php-trim-plus_](https://www.npmjs.com/package/php-trim-plus)
 
-本类库代码优先发布 [码云 - Gitee](https://gitee.com/)，github只用作ci，用中国人自己的代码仓库，专业私有云代码托管。
+Javascript 字符串处理的实用程序。保留原 php-trim-plus 的所有特性，并扩展了对 Buffer、ArrayBuffer、TypedBuffer的支持。
 
-## 安装说明
+目前主要提供如下的函数工具：
 
-```shell
-npm install php-trim-plus --save
-// or
-yarn add php-trim-plus
-```
+* toSafeString
+* isBufferObject, bufferToString
+* trim, ltrim, rtrim
+* isEmptyString, isEmptyStringOrWhitespace
+* isString, isSymbol (from lodash)
 
 ## 使用说明
 
-默认打包的版本（index.js），已经将依赖的 lodash 整合打包。
+### toSafeString
 
-trim.js 未打包 lodash
+* unicode 正规化处理
+* 传入数组打扁，实用 join 处理
+* Symbol 提取字符
+* 函数转为空字符
+* 对象，优先尝试执行对象的 toString 方法
 
 ```js
-const {trim, ltrim, rtrim, toSafeString, isSymbol, isString, isEmptyString, isEmptyStringOrWhitespace} = require('../php-trim-plus');
-// or
-import {trim, ltrim, rtrim, toSafeString, isSymbol, isString, isEmptyString, isEmptyStringOrWhitespace} from 'php-trim-plus';
+toSafeString(value)
+
+// 处理数组时，第二个字符为数组拼接的连接符
+toSafeString(['a', 'b', 'c'], '/'); // 'a/b/c'
+
+// 处理 buffer 时，第二个参数为 encoding
+toSafeString(Buffer.from('hello'), 'base64');
 ```
+
+### trim
 
 ```js
 trim(str, charList, isPlus)
@@ -40,24 +50,7 @@ trim(' 红薯-- ', '-'); // '红薯'
 `charList: string` 要额外截取的字符串
 `isPlus: boolean` 对 charList 是在现有空字符的基础上追加 charList，默认为 true，`trim.Replace` or `trim.Plus`
 
-
-```js
-toSafeString(value)
-
-toSafeString(['a', 'b', 'c'], '/'); // 'a/b/c'
-```
-
-将字符串转为安全字符串。
-
-如果 value 为数组类型，会将数组打扁 [flattenDeep](https://lodash.com/docs/4.17.11#flattenDeep) 后，再join，可以指定第二参数 `spr`
-
-字符串转换，默认增加了 `value.normalize()` 转换 unicode。
-
-```js
-isString(value); 
-```
-
-lodash.isString 的引用
+### isEmptyString, isEmptyStringOrWhitespace
 
 ```js
 isEmptyString(value);
