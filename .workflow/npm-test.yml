@@ -15,7 +15,5 @@ stages:                                   # 构建阶段配置
           name: npm-test                 # 定义一个 ID 标识为 npm-build ,名为 “npm Step” 的阶段
           displayName: 'npm test'
           inputs:                         # 构建输入参数设定
-            nodeVersion: 10.1             # 指定 node 环境版本为 10.1
-            goals: |
-              npm install
-              npm run test
+            nodeVersion: 14             # 指定 node 环境版本为 10.1
+            goals: "npm install && npm run test"
