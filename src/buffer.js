@@ -2,7 +2,6 @@
 
 const bufferExists = typeof Buffer !== 'undefined';
 const arrayBufferExists = typeof ArrayBuffer !== 'undefined';
-const textDecoderExists = typeof TextDecoder === 'undefined';
 
 export const isSupportBuffer = () => bufferExists || arrayBufferExists;
 

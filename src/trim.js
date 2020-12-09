@@ -96,7 +96,7 @@ export function trim(
   if (charList !== '') {
     charList = charList.replace(/([[\]().?/*{}+$^:])/g, '$1');
     // 这里进行了修改，isPlus = true时为追加模式
-    if (!!isPlus) {
+    if (isPlus) {
       whitespace += charList;
     } else {
       whitespace = charList;

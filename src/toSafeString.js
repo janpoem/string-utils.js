@@ -14,8 +14,6 @@ const INFINITY = 1 / 0;
 const symbolProto = typeof Symbol !== 'undefined' && Symbol.prototype ? Symbol.prototype : undefined;
 const symbolToString = symbolProto ? symbolProto.toString : undefined;
 
-const arrayBufferExists = typeof ArrayBuffer !== 'undefined';
-
 /**
  * @see https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
  *

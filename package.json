@@ -16,10 +16,12 @@
   "author": "Jiankai Zeng <janpoem@163.com>",
   "license": "MIT",
   "main": "index.js",
+  "module": "index.es.js",
   "files": [
     "index.js",
     "index.js.map",
-    "trim.js"
+    "index.es.js",
+    "src/*.js"
   ],
   "scripts": {
     "build": "rollup -c",
