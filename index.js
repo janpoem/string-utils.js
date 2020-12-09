@@ -668,8 +668,34 @@ function rtrim(str) {
   return trim(str, charList, isPlus, TrimRight);
 }
 
+function isEmptyString(value) {
+  if (value === null || typeof value === 'undefined') {
+    return true;
+  }
+
+  return toSafeString(value).length <= 0;
+}
+
+/**
+ * 是否空白文字，或者纯粹的空格字符串
+ *
+ * @param value
+ * @param {string|string[]} charList
+ * @return {boolean}
+ */
+
+function isEmptyStringOrWhitespace(value, charList) {
+  if (isEmptyString(value)) {
+    return true;
+  }
+
+  return trim(value, charList).length <= 0;
+}
+
 exports.bufferToString = bufferToString;
 exports.isBufferObject = isBufferObject;
+exports.isEmptyString = isEmptyString;
+exports.isEmptyStringOrWhitespace = isEmptyStringOrWhitespace;
 exports.isString = isString_1;
 exports.isSymbol = isSymbol_1;
 exports.ltrim = ltrim;

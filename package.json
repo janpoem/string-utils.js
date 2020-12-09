@@ -1,6 +1,6 @@
 {
   "name": "@ke/string-utils",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "javascript string utils",
   "repository": "https://gitee.com/janpoem/string-utils.js.git",
   "keywords": [
@@ -24,8 +24,9 @@
     "src/*.js"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "test": "jest"
+    "eslint-check": "eslint ./src/*.js",
+    "test": "jest",
+    "build": "rollup -c"
   },
   "jest": {
     "transform": {
