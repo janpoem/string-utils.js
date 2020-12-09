@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 
 export default [
 	{
-		input:   'trim.js',
+		input:   'index.es.js',
 		output:  [
 			{file: 'index.js', format: 'cjs', sourcemap: true},
 		],
